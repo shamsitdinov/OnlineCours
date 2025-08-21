@@ -5,6 +5,7 @@ import { GrLinkNext } from "react-icons/gr";
 import { GrLinkPrevious } from "react-icons/gr";
 import { classes, courses } from "../data";
 import { Link } from "react-router-dom";
+import { IoCaretBackCircleOutline, IoCaretForwardCircleOutline } from "react-icons/io5";
 
 const BoothstrapCourses = () => {
   let [lesson, setLesson] = useState(Boothtrap); 
@@ -12,13 +13,6 @@ const BoothstrapCourses = () => {
   let [currentVideo, setCurrentVideo] = useState(Boothtrap[courseIndex]);
   let [allCourses, setAllCourses] = useState(courses);
 
-  const selectedPL = (itemName) => {
-    allCourses.forEach((item, index) => {
-      if (item.title === itemName) {
-        setLesson(CSS);
-      }
-    });
-  };
 
   const selectCourse = (num) => {
     lesson.forEach((item, index) => {
@@ -40,6 +34,9 @@ const BoothstrapCourses = () => {
 
   return (
     <div className=" w-full max-md:overflow-x-hidden grid-cols-2 max-md:grid-cols-1 px-5 pt-[13vh] gap-5 min-h-[100vh]">
+        <Link to="/">
+        <IoCaretBackCircleOutline className="text-5xl fixed top-3 text-white ml-5 z-20" />
+      </Link>
         <h2 className="text-center flex  gap-4 items-center font-extrabold">
           <SiTypescript className="text-4xl" /> {currentVideo.author}
         </h2>
@@ -70,7 +67,7 @@ const BoothstrapCourses = () => {
         ></iframe>
         <div className="my-5 flex justify-between mx-10 items-center text-3xl">
           {courseIndex !== 0 ? (
-            <GrLinkPrevious
+            <IoCaretBackCircleOutline
               onClick={() => nextVideo("")}
               className="cursor-pointer bg-gray-700 w-[50px] h-[50px] max-md:w-8 max-md:h-8 rounded-full p-2 text-white hover:-translate-y-1 duration-500"
             />
@@ -81,7 +78,7 @@ const BoothstrapCourses = () => {
             {currentVideo.title}
           </h3>
           {courseIndex !== lesson.length - 1 ? (
-            <GrLinkNext
+            <IoCaretForwardCircleOutline
               onClick={() => nextVideo("next")}
               className="cursor-pointer bg-gray-700 w-[50px] h-[50px] rounded-full p-2 text-white hover:-translate-y-1 duration-500 max-md:w-8 max-md:h-8"
             />

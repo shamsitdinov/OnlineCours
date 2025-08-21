@@ -38,10 +38,10 @@ export function App() {
       <Routes>
         <Route path="/html" element={<HTMLCourses />} />
         <Route path="/css" element={<CSSCourses />} />
-        <Route path="/js" element={<JSCourses />} />
-        <Route path="/reactjs" element={<ReactCourses />} />
+        <Route path="/javascript" element={<JSCourses />} />
+        <Route path="/react" element={<ReactCourses />} />
         <Route path="/redux" element={<ReduxCourses />} />
-        <Route path="/ts" element={<TypeScriptCourses />} />
+        <Route path="/typescript" element={<TypeScriptCourses />} />
         <Route path="/tailwindcss" element={<TailwindCourses />} />
         <Route path="/bootstrap" element={<BoothstrapCourses />} />
         <Route path="/contact" element={<Contact />} />

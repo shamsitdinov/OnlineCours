@@ -41,6 +41,9 @@ const TypeScriptCourses = () => {
 
   return (
     <div className=" w-full max-md:overflow-x-hidden grid-cols-2 max-md:grid-cols-1 px-5 pt-[13vh] gap-5 min-h-[100vh]">
+        <Link to="/">
+        <IoCaretBackCircleOutline className="text-5xl absolute top-3 text-white ml-5 z-20" />
+      </Link>
         <h2 className="text-center flex  gap-4 items-center font-extrabold">
           <SiTypescript className="text-4xl" /> {currentVideo.author}
         </h2>
